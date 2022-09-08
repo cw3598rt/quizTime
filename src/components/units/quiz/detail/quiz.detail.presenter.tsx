@@ -1,5 +1,5 @@
 import * as S from "./quiz.detail.styles";
-import QuitItem from "../item/quiz.item.container";
+import QuizItem from "../item/quiz.item.container";
 import QuizStartUI from "./quiz.start.presenter";
 export default function QuizUI(props) {
   return (
@@ -9,7 +9,9 @@ export default function QuizUI(props) {
       )}
       {props.isClicked && (
         <div>
-          <QuitItem />
+          {props.data?.quizData.map((quiz, index) => (
+            <QuizItem key={index} quiz={quiz} index={index} data={props.data} />
+          ))}
         </div>
       )}
     </S.Wrapper>

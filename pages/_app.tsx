@@ -1,6 +1,7 @@
 import { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
+import { RecoilRoot } from "recoil";
 import "../styles/globals.css";
 
 const queryClient = new QueryClient({
@@ -9,6 +10,11 @@ const queryClient = new QueryClient({
       onError: (error) => {
         error instanceof Error ? alert(error.message) : alert("접속장애");
       },
+      staleTime: 600000,
+      cacheTime: 900000,
+      refetchOnMount: false,
+      refetchOnReconnect: false,
+      refetchOnWindowFocus: false,
     },
     mutations: {
       onError: (error) => {
@@ -20,10 +26,12 @@ const queryClient = new QueryClient({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />
-      <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
-    </QueryClientProvider>
+    <RecoilRoot>
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />
+        <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
+      </QueryClientProvider>
+    </RecoilRoot>
   );
 }
 
