@@ -1,4 +1,3 @@
-import { route } from "next/dist/server/router";
 import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 import MainUI from "./main.presenter";

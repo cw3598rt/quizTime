@@ -71,11 +71,11 @@ export const CongratsLights = styled.span`
   display: block;
   border-radius: 10px;
 
-  :nth-child(2n-1) {
+  :nth-of-type(2n-1) {
     background: red;
     animation: bar1 0.8s infinite ease;
   }
-  :nth-child(2n) {
+  :nth-of-type(2n) {
     background: yellow;
     animation: bar2 0.8s infinite ease;
   }

@@ -2,7 +2,8 @@ import { AppProps } from "next/app";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { RecoilRoot } from "recoil";
-import "../styles/globals.css";
+import "antd/dist/antd.css";
+// import "../styles/globals.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
