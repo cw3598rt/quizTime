@@ -6,6 +6,10 @@ import * as S from "./quiz.item.styles";
 export default function QuizItemUI(props) {
   const [pickedAnswer] = useRecoilState(pickedAnswerState);
 
+  const retryingAnswers = props.retryingData?.map(
+    (Answers) => Answers.incorrect_answers
+  );
+
   return (
     <>
       {props.index === props.indexCounter && (
@@ -14,14 +18,13 @@ export default function QuizItemUI(props) {
             <S.QuestionTitle>Question {props.index + 1}</S.QuestionTitle>
             <S.Question>{props.quiz.question}</S.Question>
             <S.ButtonBox>
-              {props.Answers[props.indexCounter].map((answer, index) => (
-                <QuizButtonUI
-                  key={index}
-                  answer={answer}
-                  index={index}
-                  quiz={props.quiz}
-                />
-              ))}
+              {props.isRetrying
+                ? retryingAnswers[props.indexCounter].map((answer, index) => (
+                    <QuizButtonUI key={index} answer={answer} index={index} />
+                  ))
+                : props.Answers[props.indexCounter].map((answer, index) => (
+                    <QuizButtonUI key={index} answer={answer} index={index} />
+                  ))}
             </S.ButtonBox>
             {(pickedAnswer === props.quiz.correct_answer && (
               <S.CongratsBox>

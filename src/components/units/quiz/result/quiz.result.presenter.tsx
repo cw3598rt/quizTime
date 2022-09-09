@@ -5,7 +5,7 @@ import {
   timeRecordState,
 } from "../../../../commons/store";
 import * as S from "./quiz.result.styles";
-export default function QuizResultUI() {
+export default function QuizResultUI(props) {
   const [timeRecord] = useRecoilState(timeRecordState);
   const [correctAnswerCounter] = useRecoilState(correctAnswersState);
   const [inCorrectAnswerCounter] = useRecoilState(inCorrectAnswersState);
@@ -41,7 +41,7 @@ export default function QuizResultUI() {
         </S.TextDataBox>
       </S.ResultDataBox>
       <S.ButtonBox>
-        <S.Buttons>다시 풀기</S.Buttons>
+        <S.Buttons onClick={props.onClickMoveToRetryPage}>다시 풀기</S.Buttons>
         <S.Buttons>오답 노트</S.Buttons>
       </S.ButtonBox>
     </S.Section>
