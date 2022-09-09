@@ -28,3 +28,8 @@ export const inCorrectAnswersState = atom({
   key: "inCorrectAnswersState",
   default: [""],
 });
+
+export const isLoadedState = atom({
+  key: "isLoadedState",
+  default: false,
+});
