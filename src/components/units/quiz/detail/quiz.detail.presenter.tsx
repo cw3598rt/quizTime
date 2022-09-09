@@ -10,7 +10,16 @@ export default function QuizUI(props) {
       {props.isClicked && (
         <div>
           {props.data?.quizData.map((quiz, index) => (
-            <QuizItem key={index} quiz={quiz} index={index} data={props.data} />
+            <QuizItem
+              pause={props.pause}
+              seconds={props.seconds}
+              minutes={props.minutes}
+              hours={props.hours}
+              key={index}
+              quiz={quiz}
+              index={index}
+              data={props.data}
+            />
           ))}
         </div>
       )}

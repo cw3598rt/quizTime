@@ -22,7 +22,7 @@ export const Divider = styled.div`
 `;
 export const SubTitle = styled.h2`
   font-size: 2em;
-  color: cornsilk;
+  color: forestgreen;
 `;
 export const ThemeBox = styled.div`
   width: 60%;
