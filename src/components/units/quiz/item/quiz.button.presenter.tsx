@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useRecoilState } from "recoil";
+import Swal from "sweetalert2";
 import { pickedAnswerState } from "../../../../commons/store";
 import * as S from "./quiz.item.styles";
 export default function QuizButtonUI(props) {
@@ -10,7 +11,13 @@ export default function QuizButtonUI(props) {
     setPickedAnswer(event.target.innerText);
   };
   const onClickAlert = () => {
-    alert("답은 한개만 고를수 있습니다.");
+    Swal.fire({
+      title: "답은 한개만 고를수 있습니다.",
+      icon: "warning",
+      showConfirmButton: false,
+      timer: 1000,
+      backdrop: false,
+    });
   };
   return (
     <>
@@ -18,7 +25,7 @@ export default function QuizButtonUI(props) {
         isClicked={isClicked}
         onClick={pickedAnswer ? onClickAlert : onClickAnswer}
       >
-        {props.answer}
+        {props.answer.replace(/&quot;/g, '"').replace(/&#039;/g, "'")}
       </S.Buttons>
     </>
   );

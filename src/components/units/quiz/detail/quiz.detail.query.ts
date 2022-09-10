@@ -10,7 +10,6 @@ export async function getQuizByTheme(themeId) {
   wrongAnswers.map((answers, index) => answers.push(correctAnswer[index]));
   const Answers = [...wrongAnswers];
   Answers.map((answer) => answer.sort(() => 0.5 - Math.random()));
-  console.log(quizData);
 
   return { quizData, Answers };
 }

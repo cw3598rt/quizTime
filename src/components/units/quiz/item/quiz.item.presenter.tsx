@@ -16,7 +16,11 @@ export default function QuizItemUI(props) {
         <S.Section>
           <S.Wrapper>
             <S.QuestionTitle>Question {props.index + 1}</S.QuestionTitle>
-            <S.Question>{props.quiz.question}</S.Question>
+            <S.Question>
+              {props.quiz.question
+                .replace(/&quot;/g, '"')
+                .replace(/&#039;/g, "'")}
+            </S.Question>
             <S.ButtonBox>
               {props.isRetrying
                 ? retryingAnswers[props.indexCounter].map((answer, index) => (
@@ -66,7 +70,7 @@ export default function QuizItemUI(props) {
 
             <S.NextButton
               isFinished={pickedAnswer}
-              onClick={props.onClickMoveToNextQuestion}
+              onClick={props.onClickMoveToNextQuestion(props.quiz)}
             >
               Next
             </S.NextButton>

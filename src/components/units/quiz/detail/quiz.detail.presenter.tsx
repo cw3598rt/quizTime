@@ -9,7 +9,7 @@ export default function QuizUI(props) {
         <QuizStartUI onClickShowQuizItem={props.onClickShowQuizItem} />
       )}
       {props.isClicked && (
-        <div>
+        <S.QuizItemBox>
           {props.isRetrying
             ? props.retryingData?.map((quiz, index) => (
                 <QuizItem
@@ -37,7 +37,7 @@ export default function QuizUI(props) {
                   data={props.data}
                 />
               ))}
-        </div>
+        </S.QuizItemBox>
       )}
     </S.Wrapper>
   );
