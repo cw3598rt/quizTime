@@ -13,6 +13,8 @@ export default function ReviewItemUI(props) {
   const [inCorrectAnswerCounter] = useRecoilState(inCorrectAnswersState);
   const [noteData, setNoteData] = useRecoilState(reviewNoteWritingState);
   const [rate, setRate] = useState(0);
+
+  console.log(props.review.incorrect_answers);
   useEffect(() => {
     if (props.review.difficulty === "easy") {
       setRate(1);
@@ -31,7 +33,12 @@ export default function ReviewItemUI(props) {
     <S.Wrapper key={props.index}>
       <S.WrongAnswerBox>
         <S.WrongQuestionBox>
-          <S.WrongQuestion>{props.review.question}</S.WrongQuestion>
+          <S.WrongQuestion>
+            {props.review.question
+              .replace(/&quot;/g, '"')
+              .replace(/&#039;/g, "'")
+              .replace(/&rsquo;/g, "'")}
+          </S.WrongQuestion>
           <S.WrongQuestionOptions>
             <S.WrongQuestionDifficulty>
               <S.DifficultyTitle>난이도</S.DifficultyTitle>
@@ -40,11 +47,20 @@ export default function ReviewItemUI(props) {
 
             <S.MyPickedAnswer>
               내가 고른 답 :
-              {inCorrectAnswerCounter.map((myanswer) =>
-                props.review.incorrect_answers.find(
-                  (answer) => answer === myanswer
+              {inCorrectAnswerCounter
+                .map((myanswer) =>
+                  props.review.incorrect_answers.find(
+                    (answer) =>
+                      answer
+                        .replace(/&quot;/g, '"')
+                        .replace(/&#039;/g, "'")
+                        .replace(/&rsquo;/g, "'") === myanswer
+                  )
                 )
-              )}
+                .join("")
+                .replace(/&quot;/g, '"')
+                .replace(/&#039;/g, "'")
+                .replace(/&rsquo;/g, "'")}
             </S.MyPickedAnswer>
           </S.WrongQuestionOptions>
         </S.WrongQuestionBox>
@@ -55,7 +71,10 @@ export default function ReviewItemUI(props) {
                 key={index}
                 isCorrect={props.review.correct_answer === answers}
               >
-                {`${index + 1}. ${answers} ${
+                {`${index + 1}. ${answers
+                  .replace(/&quot;/g, '"')
+                  .replace(/&#039;/g, "'")
+                  .replace(/&rsquo;/g, "'")} ${
                   props.review.correct_answer === answers ? "정답" : ""
                 }`}
               </S.WrongQuestionAnswerChoice>

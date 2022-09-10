@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -6,6 +7,16 @@ export const Wrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  @media ${breakPoints.mobile} {
+    margin-top: 2em;
+    width: 100%;
+    font-size: 0.8em;
+  }
+  @media ${breakPoints.tablet} {
+    margin-top: 0em;
+    width: 100%;
+    font-size: 1.3em;
+  }
 `;
 export const QuizItemBox = styled.div`
   width: 100%;
@@ -18,6 +29,17 @@ export const Section = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 3em;
+  @media ${breakPoints.mobile} {
+    margin-top: 15em;
+    width: 100%;
+    font-size: 1em;
+  }
+  @media ${breakPoints.tablet} {
+    margin-top: 15em;
+    padding: 3em;
+    width: 100%;
+    font-size: 1.5em;
+  }
 `;
 
 export const QuizStart = styled.h3`

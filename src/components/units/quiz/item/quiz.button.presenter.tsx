@@ -25,7 +25,10 @@ export default function QuizButtonUI(props) {
         isClicked={isClicked}
         onClick={pickedAnswer ? onClickAlert : onClickAnswer}
       >
-        {props.answer.replace(/&quot;/g, '"').replace(/&#039;/g, "'")}
+        {props.answer
+          .replace(/&quot;/g, '"')
+          .replace(/&#039;/g, "'")
+          .replace(/&rsquo;/g, "'")}
       </S.Buttons>
     </>
   );

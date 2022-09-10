@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Progress } from "antd";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Graph = styled(Progress)``;
 export const Section = styled.section`
@@ -9,6 +10,16 @@ export const Section = styled.section`
   justify-content: center;
   align-items: center;
   margin-top: 3em;
+  @media ${breakPoints.mobile} {
+    margin-top: 8em;
+    width: 100%;
+    font-size: 0.8em;
+  }
+  @media ${breakPoints.tablet} {
+    margin-top: 10em;
+    width: 100%;
+    font-size: 1.3em;
+  }
 `;
 export const ResultTitle = styled.h1`
   font-size: 4em;
@@ -19,10 +30,22 @@ export const ResultDataBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3em;
+  }
 `;
 export const TextDataBox = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media ${breakPoints.tablet} {
+    font-size: 0.7em;
+  }
 `;
 export const TimePassedDataBox = styled.div`
   display: flex;

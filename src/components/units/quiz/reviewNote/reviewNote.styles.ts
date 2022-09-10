@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { Rate } from "antd";
+import { breakPoints } from "../../../../commons/styles/media";
 export const Section = styled.section`
   width: 100%;
   display: flex;
@@ -8,6 +9,18 @@ export const Section = styled.section`
   align-items: center;
   margin-top: 3em;
   gap: 3em;
+  @media ${breakPoints.mobile} {
+    margin-top: 0em;
+    width: 100%;
+    font-size: 1em;
+    gap: 0em;
+  }
+  @media ${breakPoints.tablet} {
+    margin-top: 0em;
+    width: 100%;
+    font-size: 1.3em;
+    gap: 0em;
+  }
 `;
 export const Title = styled.h1`
   font-size: 4em;
@@ -25,6 +38,14 @@ export const Wrapper = styled.div`
   padding: 2em;
   border-radius: 20px;
   margin-bottom: 5em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 1em;
+  }
+  @media ${breakPoints.tablet} {
+    width: 100%;
+    font-size: 1.3em;
+  }
 `;
 export const WrongAnswerBox = styled.div`
   width: 100%;
@@ -36,11 +57,22 @@ export const WrongQuestionBox = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0.5em;
+  }
 `;
 export const WrongQuestion = styled.pre`
   width: 50%;
   white-space: pre-wrap;
   font-size: 1.2em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 1em;
+  }
 `;
 export const WrongQuestionOptions = styled.div`
   display: flex;
@@ -83,6 +115,9 @@ export const MemoBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1em;
+  @media ${breakPoints.mobile} {
+    margin-bottom: 2em;
+  }
 `;
 export const NoteTitle = styled.span`
   font-size: 1.3em;
