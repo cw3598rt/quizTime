@@ -6,6 +6,7 @@ import {
   inCorrectAnswersState,
   indexCounterState,
   pickedAnswerState,
+  reviewNoteState,
   timeRecordState,
 } from "../../../../commons/store";
 import QuizItemUI from "./quiz.item.presenter";
@@ -20,13 +21,16 @@ export default function QuizItem(props) {
   const [inCorrectAnswerCounter, setInCorrectAnswerCounter] = useRecoilState(
     inCorrectAnswersState
   );
+  const [reviewNote, setReviewNote] = useRecoilState(reviewNoteState);
   const router = useRouter();
-  const onClickMoveToNextQuestion = () => {
+  const onClickMoveToNextQuestion = (Questions) => () => {
     if (pickedAnswer === props.quiz.correct_answer) {
       const correctAnswers = [...correctAnswerCounter];
       correctAnswers.push(pickedAnswer);
       setCorrectAnswerCounter(correctAnswers);
     } else {
+      const reviewData = [...reviewNote, Questions];
+      setReviewNote(reviewData);
       const inCorrectAnswers = [...inCorrectAnswerCounter];
       inCorrectAnswers.push(pickedAnswer);
       setInCorrectAnswerCounter(inCorrectAnswers);

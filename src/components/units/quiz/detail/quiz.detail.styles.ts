@@ -7,7 +7,10 @@ export const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
 `;
-
+export const QuizItemBox = styled.div`
+  width: 100%;
+  height: 30em;
+`;
 export const Section = styled.div`
   width: 100%;
   display: flex;

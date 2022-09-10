@@ -18,6 +18,7 @@ export const Wrapper = styled.div`
   gap: 3em;
 `;
 export const Question = styled.pre`
+  width: 100%;
   white-space: pre-wrap;
   margin-bottom: 1em;
   font-size: 1.5em;

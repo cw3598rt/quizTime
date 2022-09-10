@@ -42,7 +42,9 @@ export default function QuizResultUI(props) {
       </S.ResultDataBox>
       <S.ButtonBox>
         <S.Buttons onClick={props.onClickMoveToRetryPage}>다시 풀기</S.Buttons>
-        <S.Buttons>오답 노트</S.Buttons>
+        <S.Buttons onClick={props.onClickMoveToreviewNotePage}>
+          오답 노트 작성
+        </S.Buttons>
       </S.ButtonBox>
     </S.Section>
   );
