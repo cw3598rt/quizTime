@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { breakPoints } from "../../../../commons/styles/media";
 
 export const Section = styled.section`
   width: 100%;
@@ -7,9 +8,21 @@ export const Section = styled.section`
   justify-content: center;
   align-items: center;
   margin-top: 3em;
+  @media ${breakPoints.mobile} {
+    width: 100%;
+    font-size: 0.8em;
+  }
+  @media ${breakPoints.tablet} {
+    margin-top: 2em;
+    width: 100%;
+    font-size: 1em;
+  }
 `;
 export const QuestionTitle = styled.h3`
   align-self: flex-start;
+  @media ${breakPoints.mobile} {
+    font-size: 2.5em;
+  }
 `;
 export const Wrapper = styled.div`
   width: 50%;
@@ -22,6 +35,9 @@ export const Question = styled.pre`
   white-space: pre-wrap;
   margin-bottom: 1em;
   font-size: 1.5em;
+  @media ${breakPoints.mobile} {
+    font-size: 2em;
+  }
 `;
 export const ButtonBox = styled.div`
   width: 100%;
@@ -45,6 +61,12 @@ export const Buttons = styled.button`
     color: whitesmoke;
   }
   transition: all 250ms;
+  @media ${breakPoints.mobile} {
+    font-size: 1.8em;
+  }
+  @media ${breakPoints.tablet} {
+    font-size: 1.3em;
+  }
 `;
 export const NextButton = styled.button`
   cursor: pointer;
@@ -58,6 +80,12 @@ export const NextButton = styled.button`
   background-color: forestgreen;
   color: whitesmoke;
   visibility: ${(props) => (props.isFinished ? "visible" : "hidden")};
+  @media ${breakPoints.mobile} {
+    font-size: 1.8em;
+  }
+  @media ${breakPoints.tablet} {
+    font-size: 1.8em;
+  }
 `;
 
 export const CongratsBox = styled.div`

@@ -19,7 +19,8 @@ export default function QuizItemUI(props) {
             <S.Question>
               {props.quiz.question
                 .replace(/&quot;/g, '"')
-                .replace(/&#039;/g, "'")}
+                .replace(/&#039;/g, "'")
+                .replace(/&rsquo;/g, "'")}
             </S.Question>
             <S.ButtonBox>
               {props.isRetrying

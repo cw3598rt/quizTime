@@ -5,7 +5,8 @@ import { RecoilRoot } from "recoil";
 import "react-quill/dist/quill.snow.css";
 import "antd/dist/antd.css";
 import Swal from "sweetalert2";
-// import "../styles/globals.css";
+import { Global } from "@emotion/react";
+import { globalStyles } from "../src/commons/styles/globalStyles";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -59,6 +60,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
+        <Global styles={globalStyles} />
         <Component {...pageProps} />
         <ReactQueryDevtools initialIsOpen={false} position="bottom-right" />
       </QueryClientProvider>
