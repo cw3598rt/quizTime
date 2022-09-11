@@ -1,34 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 퀴즈 웹앱 만들기!
 
-## Getting Started
+기간: 9월8일~9월11일
 
-First, run the development server:
+사용한 스킬: Next.js, Vercel, Cypress, Typescript, Emotion, React-query, Recoil.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+배포된 웹사이트 주소: https://quiz-time-roan.vercel.app/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+첫 페이지에서 랜덤으로 테마 8개를 골라서 보여준다.
+![스크린샷 2022-09-11 오후 10 21 25](https://user-images.githubusercontent.com/79645896/189529923-d21c8076-8326-42a5-9bb4-4d4cd24a3961.png)시작 버튼(go)를 눌러서 퀴즈가 보이도록 해주었다.![스크린샷 2022-09-11 오후 10 21 39](https://user-images.githubusercontent.com/79645896/189529974-856d0f63-8ca1-43dd-b4ff-6ebaaf3776ed.png)
+![스크린샷 2022-09-11 오후 10 21 49](https://user-images.githubusercontent.com/79645896/189530014-4be35405-9220-40eb-88ff-6847346995a4.png)
+정답을 골랐을 경우 메세지를 통해 알려준다.![스크린샷 2022-09-11 오후 10 21 56](https://user-images.githubusercontent.com/79645896/189530044-a25f5e18-bac7-45a4-a3ca-7fe8227556a2.png)반대로 틀렸을 경우 메세지도 구현하였다.![스크린샷 2022-09-11 오후 10 22 06](https://user-images.githubusercontent.com/79645896/189530057-e11c187a-541d-4cc1-958b-d8c47c38180f.png)문제를 다 풀면 결과화면에서 정답률, 소요된 시간, 정답과 오답 갯수를 알 수 있다.
+![스크린샷 2022-09-11 오후 10 22 21](https://user-images.githubusercontent.com/79645896/189530105-98b80ba4-a367-435e-be90-c9307e98b8cc.png)
+결과페이지에서 다시 풀기를 누르면 ![스크린샷 2022-09-11 오후 10 21 39](https://user-images.githubusercontent.com/79645896/189530129-9592610e-4ad9-4698-971a-107153b8a3fd.png)![스크린샷 2022-09-11 오후 10 21 49](https://user-images.githubusercontent.com/79645896/189530133-6a19061e-883c-4942-ba44-3e8684c88145.png)
+다시 풀수 있도록 했으며, 그에 따라 결과값도 변화하게 된다.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+결과페이지에서 오답노트 작성을 누르면 노트 작성 페이지를 보여준다.![스크린샷 2022-09-11 오후 10 22 30](https://user-images.githubusercontent.com/79645896/189530163-f8a933c4-4f2b-4425-98b6-c1126b7b2977.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Kapture 2022-09-11 at 22 14 57](https://user-images.githubusercontent.com/79645896/189529802-3a020fa6-a3d4-4ac9-9b17-6032dbfb9e2e.gif)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
