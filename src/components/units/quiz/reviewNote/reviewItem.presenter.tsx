@@ -15,7 +15,6 @@ export default function ReviewItemUI(props: ReviewItemUIProps) {
   const [noteData] = useRecoilState(reviewNoteWritingState);
   const [rate, setRate] = useState(0);
 
-  console.log(props.review.incorrect_answers);
   useEffect(() => {
     if (props.review.difficulty === "easy") {
       setRate(1);
@@ -51,7 +50,7 @@ export default function ReviewItemUI(props: ReviewItemUIProps) {
               {inCorrectAnswerCounter
                 .map((myanswer) =>
                   props.review.incorrect_answers.find(
-                    (answer) =>
+                    (answer: string) =>
                       answer
                         .replace(/&quot;/g, '"')
                         .replace(/&#039;/g, "'")
@@ -66,21 +65,23 @@ export default function ReviewItemUI(props: ReviewItemUIProps) {
           </S.WrongQuestionOptions>
         </S.WrongQuestionBox>
         <S.WrongQuestionAnswerChoiceBox>
-          {props.review.incorrect_answers.map((answers, index) => (
-            <>
-              <S.WrongQuestionAnswerChoice
-                key={index}
-                isCorrect={props.review.correct_answer === answers}
-              >
-                {`${index + 1}. ${answers
-                  .replace(/&quot;/g, '"')
-                  .replace(/&#039;/g, "'")
-                  .replace(/&rsquo;/g, "'")} ${
-                  props.review.correct_answer === answers ? "정답" : ""
-                }`}
-              </S.WrongQuestionAnswerChoice>
-            </>
-          ))}
+          {props.review.incorrect_answers.map(
+            (answers: string, index: number) => (
+              <>
+                <S.WrongQuestionAnswerChoice
+                  key={index}
+                  isCorrect={props.review.correct_answer === answers}
+                >
+                  {`${index + 1}. ${answers
+                    .replace(/&quot;/g, '"')
+                    .replace(/&#039;/g, "'")
+                    .replace(/&rsquo;/g, "'")} ${
+                    props.review.correct_answer === answers ? "정답" : ""
+                  }`}
+                </S.WrongQuestionAnswerChoice>
+              </>
+            )
+          )}
         </S.WrongQuestionAnswerChoiceBox>
       </S.WrongAnswerBox>
       <S.MemoBox>
