@@ -1,8 +1,9 @@
 import * as S from "./quiz.detail.styles";
 import QuizItem from "../item/quiz.item.container";
 import QuizStartUI from "./quiz.start.presenter";
+import { QuizUIProps } from "./quiz.detail.types";
 
-export default function QuizUI(props) {
+export default function QuizUI(props: QuizUIProps) {
   return (
     <S.Wrapper>
       {!props.isClicked && (
@@ -24,7 +25,7 @@ export default function QuizUI(props) {
                   retryingData={props.retryingData}
                 />
               ))
-            : props.data?.quizData?.map((quiz, index) => (
+            : props.data?.quizData?.map((quiz: {}, index: string) => (
                 <QuizItem
                   isRetrying={props.isRetrying}
                   pause={props.pause}

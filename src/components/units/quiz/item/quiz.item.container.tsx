@@ -10,8 +10,9 @@ import {
   timeRecordState,
 } from "../../../../commons/store";
 import QuizItemUI from "./quiz.item.presenter";
+import { QuizItemProps } from "./quiz.item.types";
 
-export default function QuizItem(props) {
+export default function QuizItem(props: QuizItemProps) {
   const [indexCounter, setIndexCounter] = useRecoilState(indexCounterState);
   const [pickedAnswer, setPickedAnswer] = useRecoilState(pickedAnswerState);
   const [, setTimeRecord] = useRecoilState(timeRecordState);
@@ -23,7 +24,7 @@ export default function QuizItem(props) {
   );
   const [reviewNote, setReviewNote] = useRecoilState(reviewNoteState);
   const router = useRouter();
-  const onClickMoveToNextQuestion = (Questions) => () => {
+  const onClickMoveToNextQuestion = (Questions: string) => () => {
     if (pickedAnswer === props.quiz.correct_answer) {
       const correctAnswers = [...correctAnswerCounter];
       correctAnswers.push(pickedAnswer);
@@ -42,15 +43,15 @@ export default function QuizItem(props) {
       router.push("/quiz/result");
       props.pause();
       setTimeRecord({
-        hours: props.hours,
-        minutes: props.minutes,
-        seconds: props.seconds,
+        hours: String(props.hours),
+        minutes: String(props.minutes),
+        seconds: String(props.seconds),
       });
     }
   };
   useEffect(() => {
     if (!props.isRetrying) {
-      sessionStorage.setItem("QuizData", JSON.stringify(props.data.quizData));
+      sessionStorage.setItem("QuizData", JSON.stringify(props.data?.quizData));
     }
   }, []);
 

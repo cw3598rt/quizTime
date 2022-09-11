@@ -12,7 +12,7 @@ export default function Main() {
     refetchOnWindowFocus: true,
   });
   const router = useRouter();
-  const onClickMoveToQuizPage = (themeId) => () => {
+  const onClickMoveToQuizPage = (themeId: string) => () => {
     router.push(`/quiz/detail/${themeId}`);
   };
   return <MainUI data={data} onClickMoveToQuizPage={onClickMoveToQuizPage} />;

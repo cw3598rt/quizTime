@@ -5,7 +5,8 @@ import {
   timeRecordState,
 } from "../../../../commons/store";
 import * as S from "./quiz.result.styles";
-export default function QuizResultUI(props) {
+import { QuizResultUIProps } from "./quiz.result.types";
+export default function QuizResultUI(props: QuizResultUIProps) {
   const [timeRecord] = useRecoilState(timeRecordState);
   const [correctAnswerCounter] = useRecoilState(correctAnswersState);
   const [inCorrectAnswerCounter] = useRecoilState(inCorrectAnswersState);

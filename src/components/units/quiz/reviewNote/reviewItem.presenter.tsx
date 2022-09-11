@@ -6,12 +6,13 @@ import {
   reviewNoteWritingState,
 } from "../../../../commons/store";
 import * as S from "./reviewNote.styles";
+import { ReviewItemUIProps } from "./reviewItem.types";
 
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
-export default function ReviewItemUI(props) {
+export default function ReviewItemUI(props: ReviewItemUIProps) {
   const [inCorrectAnswerCounter] = useRecoilState(inCorrectAnswersState);
-  const [noteData, setNoteData] = useRecoilState(reviewNoteWritingState);
+  const [noteData] = useRecoilState(reviewNoteWritingState);
   const [rate, setRate] = useState(0);
 
   console.log(props.review.incorrect_answers);
@@ -97,7 +98,7 @@ export default function ReviewItemUI(props) {
         ) : (
           <pre
             dangerouslySetInnerHTML={{
-              __html: reviewData?.[props.index],
+              __html: String(reviewData?.[props.index]),
             }}
           ></pre>
         )}

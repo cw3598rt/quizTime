@@ -2,8 +2,9 @@ import * as S from "./reviewNote.styles";
 import { reviewNoteState } from "../../../../commons/store";
 import { useRecoilState } from "recoil";
 import ReviewItem from "./reviewItem.container";
+import { ReviewNoteUIProps } from "./reviewItem.types";
 
-export default function ReviewNoteUI(props) {
+export default function ReviewNoteUI(props: ReviewNoteUIProps) {
   const [reviewNote] = useRecoilState(reviewNoteState);
 
   return (
