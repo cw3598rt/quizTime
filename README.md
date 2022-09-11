@@ -2,7 +2,7 @@
 
 기간: 9월8일~9월11일
 
-사용한 스킬: Next.js, Vercel, Cypress, Typescript, Emotion, React-query, Recoil.
+사용한 스킬: Next.js, Vercel, Typescript, Emotion, React-query, Recoil.
 
 배포된 웹사이트 주소: https://quiz-time-roan.vercel.app/
 
