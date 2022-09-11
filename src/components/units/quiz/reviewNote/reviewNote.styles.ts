@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { Rate } from "antd";
 import { breakPoints } from "../../../../commons/styles/media";
+import { EmotionProps } from "./reviewItem.types";
 export const Section = styled.section`
   width: 100%;
   display: flex;
@@ -102,7 +103,8 @@ export const WrongQuestionAnswerChoiceBox = styled.div`
 export const WrongQuestionAnswerChoice = styled.div`
   font-size: 1em;
   font-weight: 600;
-  color: ${(props) => (props.isCorrect ? "forestgreen" : "black")};
+  color: ${(props: EmotionProps) =>
+    props.isCorrect ? "forestgreen" : "black"};
 `;
 
 export const MyPickedAnswer = styled.div`

@@ -1,11 +1,12 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import ReviewItemUI from "./reviewItem.presenter";
+import { ReviewItemProps } from "./reviewItem.types";
 
-export default function ReviewItem(props) {
+export default function ReviewItem(props: ReviewItemProps) {
   const [value, setValue] = useState("");
   const router = useRouter();
-  const onClickSubmitmyNote = (id) => () => {
+  const onClickSubmitmyNote = (id: number) => () => {
     const data = { [id]: value };
     const originsessionData = JSON.parse(
       sessionStorage.getItem("myNote") || "[]"

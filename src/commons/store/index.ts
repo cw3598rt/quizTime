@@ -33,15 +33,15 @@ export const isLoadedState = atom({
   key: "isLoadedState",
   default: false,
 });
-export const reviewNoteState = atom({
+export const reviewNoteState = atom<string[]>({
   key: "reviewNoteState",
   default: [],
 });
-export const reviewNoteWritingState = atom({
+export const reviewNoteWritingState = atom<string[]>({
   key: "reviewNoteWritingState",
   default: [],
 });
-export const reviewNoteValueState = atom({
+export const reviewNoteValueState = atom<string[]>({
   key: "reviewNoteValueState",
   default: [],
 });
