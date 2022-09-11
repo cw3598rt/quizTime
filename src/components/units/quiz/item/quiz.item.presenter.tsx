@@ -2,12 +2,13 @@ import { useRecoilState } from "recoil";
 import { pickedAnswerState } from "../../../../commons/store";
 import QuizButtonUI from "./quiz.button.presenter";
 import * as S from "./quiz.item.styles";
+import { QuizItemUIProps } from "./quiz.item.types";
 
-export default function QuizItemUI(props) {
+export default function QuizItemUI(props: QuizItemUIProps) {
   const [pickedAnswer] = useRecoilState(pickedAnswerState);
 
   const retryingAnswers = props.retryingData?.map(
-    (Answers) => Answers.incorrect_answers
+    (Answers: any) => Answers.incorrect_answers
   );
 
   return (
@@ -24,12 +25,16 @@ export default function QuizItemUI(props) {
             </S.Question>
             <S.ButtonBox>
               {props.isRetrying
-                ? retryingAnswers[props.indexCounter].map((answer, index) => (
-                    <QuizButtonUI key={index} answer={answer} index={index} />
-                  ))
-                : props.Answers[props.indexCounter].map((answer, index) => (
-                    <QuizButtonUI key={index} answer={answer} index={index} />
-                  ))}
+                ? retryingAnswers[props.indexCounter].map(
+                    (answer: string, index: number) => (
+                      <QuizButtonUI key={index} answer={answer} index={index} />
+                    )
+                  )
+                : props.Answers[props.indexCounter].map(
+                    (answer: string, index: number) => (
+                      <QuizButtonUI key={index} answer={answer} index={index} />
+                    )
+                  )}
             </S.ButtonBox>
             {(pickedAnswer === props.quiz.correct_answer && (
               <S.CongratsBox>

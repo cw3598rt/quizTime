@@ -14,8 +14,29 @@ export type QuizItemProps = {
   minutes: number;
   hours: number;
   key: number;
-  quiz: Questions;
+  quiz: any;
   index: number;
   data?: Data | undefined;
-  retryingData?: never[] | undefined;
+  retryingData?: string[] | undefined;
+};
+export type QuizItemUIProps = {
+  retryingData: any;
+  isRetrying: boolean;
+  onClickMoveToNextQuestion: (Questions: string) => () => void;
+  indexCounter: number;
+  quiz: any;
+  index: number;
+  Answers: any;
+};
+
+export type QuizButtonUIProps = {
+  key: number;
+  answer: string;
+  index: number;
+};
+export type ItemEmotionProps = {
+  isClicked: boolean;
+};
+export type NextButtonEmotionProps = {
+  isFinished: string;
 };

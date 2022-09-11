@@ -4,7 +4,7 @@ import { isLoadedState } from "../../../src/commons/store";
 import Quiz from "../../../src/components/units/quiz/detail/quiz.detail.container";
 
 export default function RetryPage() {
-  const [retryingData, setRetryingData] = useState([]);
+  const [retryingData, setRetryingData] = useState<string[]>([]);
   const [isLoading, setIsLoading] = useRecoilState(isLoadedState);
   useEffect(() => {
     const Data = JSON.parse(sessionStorage.getItem("QuizData") || "[]");

@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { breakPoints } from "../../../../commons/styles/media";
+import { ItemEmotionProps, NextButtonEmotionProps } from "./quiz.item.types";
 
 export const Section = styled.section`
   width: 100%;
@@ -55,7 +56,8 @@ export const Buttons = styled.button`
   outline: none;
   background-color: ${(props) =>
     props.isClicked ? "forestgreen" : "darkgray"};
-  color: ${(props) => (props.isClicked ? "whitesmoke" : "black")};
+  color: ${(props: ItemEmotionProps) =>
+    props.isClicked ? "whitesmoke" : "black"};
   :hover {
     background-color: forestgreen;
     color: whitesmoke;
@@ -79,7 +81,8 @@ export const NextButton = styled.button`
   outline: none;
   background-color: forestgreen;
   color: whitesmoke;
-  visibility: ${(props) => (props.isFinished ? "visible" : "hidden")};
+  visibility: ${(props: NextButtonEmotionProps) =>
+    props.isFinished ? "visible" : "hidden"};
   @media ${breakPoints.mobile} {
     font-size: 1.8em;
   }

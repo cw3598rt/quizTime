@@ -1,13 +1,13 @@
 export type QuizProps = {
   isRetrying: boolean;
-  retryingData?: never[];
+  retryingData?: string[] | undefined;
 };
 export type Data = {
   quizData: any;
   Answers: any[];
 };
 export type QuizUIProps = {
-  retryingData: never[] | undefined;
+  retryingData: string[] | undefined;
   isRetrying: boolean;
   data: Data | undefined;
   isClicked: boolean;

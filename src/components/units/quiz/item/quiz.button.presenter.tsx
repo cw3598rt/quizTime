@@ -3,10 +3,11 @@ import { useRecoilState } from "recoil";
 import Swal from "sweetalert2";
 import { pickedAnswerState } from "../../../../commons/store";
 import * as S from "./quiz.item.styles";
-export default function QuizButtonUI(props) {
+import { QuizButtonUIProps } from "./quiz.item.types";
+export default function QuizButtonUI(props: QuizButtonUIProps) {
   const [isClicked, setIsClicked] = useState(false);
   const [pickedAnswer, setPickedAnswer] = useRecoilState(pickedAnswerState);
-  const onClickAnswer = (event) => {
+  const onClickAnswer = (event: any) => {
     setIsClicked(true);
     setPickedAnswer(event.target.innerText);
   };
