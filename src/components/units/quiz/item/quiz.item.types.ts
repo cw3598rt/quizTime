@@ -13,9 +13,9 @@ export type QuizItemProps = {
   seconds: number;
   minutes: number;
   hours: number;
-  key: string;
+  key: number;
   quiz: Questions;
-  index: string;
+  index: number;
   data?: Data | undefined;
   retryingData?: never[] | undefined;
 };
