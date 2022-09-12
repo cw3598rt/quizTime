@@ -14,7 +14,7 @@ export const Section = styled.section`
     font-size: 0.8em;
   }
   @media ${breakPoints.tablet} {
-    margin-top: 2em;
+    margin-top: 8em;
     width: 100%;
     font-size: 1em;
   }
