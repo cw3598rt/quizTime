@@ -30,12 +30,12 @@ export const Section = styled.div`
   align-items: center;
   margin-top: 3em;
   @media ${breakPoints.mobile} {
-    margin-top: 15em;
+    margin-top: 0em;
     width: 100%;
     font-size: 1em;
   }
   @media ${breakPoints.tablet} {
-    margin-top: 15em;
+    margin-top: 0em;
     padding: 3em;
     width: 100%;
     font-size: 1.5em;
